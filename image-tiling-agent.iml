@@ -11,8 +11,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: au.org.ala:image-utils:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: au.org.ala:image-utils:1.0" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
+    <orderEntry type="library" name="Maven: javax.media:jai_imageio:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.groovy.modules.http-builder:http-builder:0.7" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.2.4" level="project" />

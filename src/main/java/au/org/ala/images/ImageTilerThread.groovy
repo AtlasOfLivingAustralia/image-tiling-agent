@@ -50,9 +50,13 @@ class ImageTilerThread extends Thread {
                 } catch (Exception ex) {
                     // try and cancel the job
                     ex.printStackTrace()
-                    Logger.log("Attempting to cancel job...")
-                    def cancelUrl = new URL("${_serviceBase}/ws/cancelTileJob?ticket=${job.jobTicket}")
-                    //Logger.log(cancelUrl.text)
+                    try {
+                        Logger.log("Attempting to cancel job...")
+                        def cancelUrl = new URL("${_serviceBase}/ws/cancelTileJob?ticket=${job.jobTicket}")
+                        Logger.log(cancelUrl.text)
+                    } catch (Exception ex2) {
+                        ex2.printStackTrace();
+                    }
                     // re-throw
                     throw ex
                 }
@@ -89,6 +93,8 @@ class ImageTilerThread extends Thread {
                                 archiveFile.delete()
                             }
                         }
+                    } else {
+                        Logger.log("Tiling failed for some reason - aborting!");
                     }
                 } finally {
                     Logger.log("Deleting image file...")
