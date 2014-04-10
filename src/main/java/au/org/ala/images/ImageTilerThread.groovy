@@ -49,9 +49,10 @@ class ImageTilerThread extends Thread {
                     processJob(job)
                 } catch (Exception ex) {
                     // try and cancel the job
+                    ex.printStackTrace()
                     Logger.log("Attempting to cancel job...")
                     def cancelUrl = new URL("${_serviceBase}/ws/cancelTileJob?ticket=${job.jobTicket}")
-                    Logger.log(cancelUrl.text)
+                    //Logger.log(cancelUrl.text)
                     // re-throw
                     throw ex
                 }
@@ -73,7 +74,7 @@ class ImageTilerThread extends Thread {
             def imageFile = downloadImage(imageInfo)
             if (imageFile) {
                 try {
-                    def results = tileImage(imageFile, (job.tileFormat as TileFormat) ?: TileFormat.JPEG)
+                    def results = tileImage(imageFile, TileFormat.JPEG)
                     if (results.zoomLevels > 0) {
                         // zip the tms directory
                         def archiveFile = createTileArchive(imageId)
