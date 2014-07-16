@@ -18,6 +18,12 @@
             <url>http://snapshots.repository.codehaus.org</url>
             <snapshots><enabled>true</enabled></snapshots>
         </repository>
+        <repository>
+            <id>ALA Repository</id>
+            <url>http://maven.ala.org.au/repository</url>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+
     </repositories>
 
     <distributionManagement>
@@ -32,7 +38,7 @@
         <dependency>
             <groupId>au.org.ala</groupId>
             <artifactId>image-utils</artifactId>
-            <version>1.5</version>
+            <version>1.8.2</version>
         </dependency>
 
         <dependency>
