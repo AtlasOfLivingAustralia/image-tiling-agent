@@ -26,13 +26,18 @@
 
     </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>ala-repository</id>
-            <uniqueVersion>false</uniqueVersion>
-            <url>scp://maven.ala.org.au/data/maven</url>
-        </repository>
-    </distributionManagement>
+        <distributionManagement>
+                <repository>
+                        <id>ala-repo</id>
+                        <name>Internal Releases</name>
+                        <url>http://ala-wonder.it.csiro.au/nexus/content/repositories/releases/</url>
+                </repository>
+                <snapshotRepository>
+                        <id>ala-repo</id>
+                        <name>Internal Releases</name>
+                        <url>http://ala-wonder.it.csiro.au/nexus/content/repositories/snapshots/</url>
+                </snapshotRepository>
+        </distributionManagement>
 
     <dependencies>
         <dependency>
