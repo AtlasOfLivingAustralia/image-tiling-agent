@@ -4,46 +4,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>au.org.ala</groupId>
+        <artifactId>ala-parent-pom</artifactId>
+        <version>1.0</version>
+    </parent>
+
     <groupId>au.org.ala</groupId>
     <artifactId>image-tiling-agent</artifactId>
     <version>1.5</version>
-
-    <repositories>
-        <repository>
-            <id>Codehaus</id>
-            <url>http://repository.codehaus.org</url>
-        </repository>
-        <repository>
-            <id>Codehaus.Snapshots</id>
-            <url>http://snapshots.repository.codehaus.org</url>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-        <repository>
-            <id>ALA Repository</id>
-            <url>http://maven.ala.org.au/repository</url>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-
-    </repositories>
-
-        <distributionManagement>
-                <repository>
-                        <id>ala-repo</id>
-                        <name>Internal Releases</name>
-                        <url>http://nexus.ala.org.au/content/repositories/releases/</url>
-                </repository>
-                <snapshotRepository>
-                        <id>ala-repo</id>
-                        <name>Internal Releases</name>
-                        <url>http://nexus.ala.org.au/content/repositories/snapshots/</url>
-                </snapshotRepository>
-        </distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>au.org.ala</groupId>
             <artifactId>image-utils</artifactId>
             <version>1.8.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.media</groupId>
+                    <artifactId>jai_imageio</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.media</groupId>
+            <artifactId>jai-imageio</artifactId>
+            <version>1.1</version>
         </dependency>
 
         <dependency>
